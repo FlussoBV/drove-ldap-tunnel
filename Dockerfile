@@ -11,6 +11,7 @@ ENV OUTGOING_HOST="changeit"
 #### Stunnel
 RUN apt-get update && apt-get install --no-install-recommends -y stunnel4=3:5.30-1 && rm -rf /var/lib/apt/lists/*
 
+COPY stunnel4 /etc/default/
 COPY stunnel.conf /etc/stunnel/
 COPY healthcheck.sh /etc/default
 
